@@ -1,0 +1,24 @@
+# permissions for end users to edit manors.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manor-editor-role
+rules:
+- apiGroups:
+  - farm.example.com
+  resources:
+  - manors
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - farm.example.com
+  resources:
+  - manors/status
+  verbs:
+  - get
